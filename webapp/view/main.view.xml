@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="bosch.co.walkthrough.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Panel id="wtPanel"
+                headerText="{i18n>helloPanelTitle}"
+                class="sapUiResponsiveMargin"
+                width="auto"
+            >
+              <Button
+         id="helloDialogButton"
+         text="{i18n>openDialogButtonText}"
+         press=".onOpenDialog"
+         icon="sap-icon://world"
+         class="sapUiSmallMarginEnd"/>
+                <Button
+                    id="wtButton"
+                    text="{i18n>showHelloButtonText}"
+                    press=".onShowHello"
+                    class="sapUiSmallMarginEnd"
+                />
+                <Input id="wtInput"
+                    value="{/recipient/name}"
+                    valueLiveUpdate="true"
+                    width="60%"
+                />
+                <Text id="wtText"
+                    text="Hello {/recipient/name}"
+                    class="sapUiSmallMargin"
+                />
+            </Panel>
+            <mvc:XMLView viewName="bosch.co.walkthrough.view.InvoiceList"/>
+        </content>
+    </Page>
+</mvc:View>
